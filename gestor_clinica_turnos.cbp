@@ -34,7 +34,19 @@
 		</Compiler>
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />
+		<Unit filename="horarioAtencion.cpp" />
+		<Unit filename="horarioAtencion.h" />
+		<Unit filename="horarioAtencionArchivo.cpp" />
+		<Unit filename="horarioAtencionArchivo.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="medico.cpp" />
+		<Unit filename="medico.h" />
+		<Unit filename="medicoArchivo.cpp" />
+		<Unit filename="medicoArchivo.h" />
+		<Unit filename="paciente.cpp" />
+		<Unit filename="paciente.h" />
+		<Unit filename="pacienteArchivo.cpp" />
+		<Unit filename="pacienteArchivo.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
