@@ -34,4 +34,4 @@ public:
     bool operator<=(const Fecha& otra) const;
 };
 
-#endif // FECHA_H_INCLUDED
+#endif

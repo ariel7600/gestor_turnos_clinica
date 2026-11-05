@@ -17,4 +17,4 @@ public:
     int buscarPorId(int idHorario);
 };
 
-#endif // HORARIOATENCIONARCHIVO_H_INCLUDED
+#endif

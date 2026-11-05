@@ -1,9 +1,7 @@
-#include <iostream>
+#include "MenuManager.h"
 
-using namespace std;
-
-int main()
-{
-    cout << "Hello world!" << endl;
+int main() {
+    MenuManager menu;
+    menu.ejecutarMenuPrincipal();
     return 0;
 }

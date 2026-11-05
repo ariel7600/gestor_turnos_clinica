@@ -16,6 +16,4 @@ public:
     int buscarPorId(int idMedico);
 };
 
-#endif // MEDICOARCHIVO_H_INCLUDED
-
-
+#endif

@@ -32,8 +32,28 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename=".gitignore" />
+		<Unit filename="README.md" />
+		<Unit filename="agenda.cpp" />
+		<Unit filename="agenda.h" />
+		<Unit filename="agendaArchivo.cpp" />
+		<Unit filename="agendaArchivo.h" />
+		<Unit filename="especialidad.cpp" />
+		<Unit filename="especialidad.h" />
+		<Unit filename="especialidadArchivo.cpp" />
+		<Unit filename="especialidadArchivo.h" />
+		<Unit filename="estadoTurno.cpp" />
+		<Unit filename="estadoTurno.h" />
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />
+		<Unit filename="gestor_clinica_turnos.depend" />
+		<Unit filename="gestor_clinica_turnos.layout" />
+		<Unit filename="historialArchivo.cpp" />
+		<Unit filename="historialArchivo.h" />
+		<Unit filename="historialMedico.cpp" />
+		<Unit filename="historialMedico.h" />
+		<Unit filename="horaMin.cpp" />
+		<Unit filename="horaMin.h" />
 		<Unit filename="horarioAtencion.cpp" />
 		<Unit filename="horarioAtencion.h" />
 		<Unit filename="horarioAtencionArchivo.cpp" />
@@ -43,10 +63,18 @@
 		<Unit filename="medico.h" />
 		<Unit filename="medicoArchivo.cpp" />
 		<Unit filename="medicoArchivo.h" />
+		<Unit filename="menuManager.cpp" />
+		<Unit filename="menuManager.h" />
 		<Unit filename="paciente.cpp" />
 		<Unit filename="paciente.h" />
 		<Unit filename="pacienteArchivo.cpp" />
 		<Unit filename="pacienteArchivo.h" />
+		<Unit filename="persona.cpp" />
+		<Unit filename="persona.h" />
+		<Unit filename="turnos.cpp" />
+		<Unit filename="turnos.h" />
+		<Unit filename="turnosArchivos.cpp" />
+		<Unit filename="turnosArchivos.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

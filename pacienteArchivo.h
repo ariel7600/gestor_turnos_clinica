@@ -18,4 +18,4 @@ public:
     int buscarPorDni(int dni);
 };
 
-#endif // PACIENTEARCHIVO_H_INCLUDED
+#endif

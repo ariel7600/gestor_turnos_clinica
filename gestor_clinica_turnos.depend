@@ -1,0 +1,147 @@
+# depslib dependency file v1.0
+1793127397 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\fecha.cpp
+	"Fecha.h"
+	<sstream>
+
+1793837743 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\fecha.h
+	<iostream>
+	<string>
+
+1793837166 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\main.cpp
+	"MenuManager.h"
+
+1793224283 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\horarioatencionarchivo.cpp
+	"HorarioAtencionArchivo.h"
+	<cstdio>
+	<cstring>
+
+1793837802 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\horarioatencionarchivo.h
+	"HorarioAtencion.h"
+
+1793837798 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\horarioatencion.h
+	<cstring>
+	<iostream>
+	"horaMin.h"
+
+1793620264 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\medico.cpp
+	"Medico.h"
+
+1793837847 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\medico.h
+	"Persona.h"
+
+1792879950 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\medicoarchivo.cpp
+	"MedicoArchivo.h"
+	<cstdio>
+	<cstring>
+
+1793837850 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\medicoarchivo.h
+	"Medico.h"
+
+1793620264 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\paciente.cpp
+	"Paciente.h"
+
+1793837854 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\paciente.h
+	"Persona.h"
+
+1793126784 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\pacientearchivo.cpp
+	"PacienteArchivo.h"
+	<cstdio>
+	<cstring>
+
+1793837857 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\pacientearchivo.h
+	"Paciente.h"
+
+1793623910 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\horarioatencion.cpp
+	"HorarioAtencion.h"
+
+1793837861 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\persona.h
+	<cstring>
+	<iostream>
+	"Fecha.h"
+
+1793620264 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\especialidad.cpp
+	"Especialidad.h"
+
+1793837708 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\especialidad.h
+	<cstring>
+	<iostream>
+
+1793620264 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\estadoturno.cpp
+	"EstadoTurno.h"
+
+1793837730 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\estadoturno.h
+	<cstring>
+	<iostream>
+
+1793620264 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\persona.cpp
+	"Persona.h"
+
+1793620318 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\horamin.cpp
+	"horaMin.h"
+	<sstream>
+
+1793837795 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\horamin.h
+	<iostream>
+	<string>
+
+1793634594 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\agenda.cpp
+	"Agenda.h"
+
+1793837688 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\agenda.h
+	<iostream>
+	"fecha.h"
+	"horaMin.h"
+
+1793634594 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\agendaarchivo.cpp
+	"agendaArchivo.h"
+	<cstdio>
+	<cstring>
+
+1793837697 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\agendaarchivo.h
+	"agenda.h"
+
+1793634594 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\especialidadarchivo.cpp
+	"especialidadArchivo.h"
+	<cstdio>
+	<cstring>
+
+1793837717 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\especialidadarchivo.h
+	"especialidad.h"
+
+1793819499 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\turnos.cpp
+	"turnos.h"
+
+1793837864 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\turnos.h
+	<cstring>
+	<iostream>
+
+1793837024 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\historialarchivo.cpp
+	"historialArchivo.h"
+	<cstdio>
+	<cstring>
+
+1793837392 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\historialarchivo.h
+	"historialMedico.h"
+
+1793837792 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\historialmedico.h
+	<cstring>
+	<iostream>
+	"Fecha.h"
+
+1793837024 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\historialmedico.cpp
+	"historialMedico.h"
+
+1793837472 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\menumanager.cpp
+	"MenuManager.h"
+	<iostream>
+
+1793837412 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\menumanager.h
+
+1793837105 source:c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\turnosarchivos.cpp
+	"turnosArchivos.h"
+	<cstdio>
+	<cstring>
+
+1793837113 c:\users\f3rna\onedrive\escritorio\programación - proyecto gestor clinica\gestor_turnos_clinica\turnosarchivos.h
+	"turnos.h"
+
