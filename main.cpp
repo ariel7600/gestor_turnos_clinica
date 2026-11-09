@@ -2,6 +2,6 @@
 
 int main() {
     MenuManager menu;
-    menu.ejecutarMenuPrincipal();
+    menu.MenuPrincipal();
     return 0;
 }

@@ -4,13 +4,14 @@
 #include <cstring>
 #include <iostream>
 #include "horaMin.h"
+#include "diaSemana.h"
 using namespace std;
 
 class HorarioAtencion {
 private:
     int idHorario;
     int idMedico;
-    char dia[10];
+    DiaSemana dia;
     HoraMin horario; //composicion con horaMin
     int duracion;
     bool estado;
@@ -21,7 +22,7 @@ public:
     // Getters
     int getIdHorario() const;
     int getIdMedico() const;
-    const char* getDia() const; // pasar a enumerado
+    DiaSemana getDia() const;
     HoraMin getHorario() const;
     int getDuracion() const;
     bool getEstado() const;
@@ -29,7 +30,7 @@ public:
     // Setters
     void setIdHorario(int id);
     void setIdMedico(int idMed);
-    void setDia(const char* d);
+    void setDia(DiaSemana d);
     void setHorario(HoraMin h);
     void setDuracion(int dur);
     void setEstado(bool est);

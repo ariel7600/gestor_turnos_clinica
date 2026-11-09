@@ -3,6 +3,7 @@
 
 #include <cstring>
 #include <iostream>
+#include "estadoTurno.h"
 using namespace std;
 
 class Turno {
@@ -13,7 +14,7 @@ private:
     char motivo[50];
     char observacionPrevia[50];
     float costoConsulta;
-    int idEstadoTurno;
+    EstadoTurno estadoTurno;
     bool estado;
 
 public:
@@ -26,7 +27,7 @@ public:
     const char* getMotivo() const;
     const char* getObservacionPrevia() const;
     float getCostoConsulta() const;
-    int getIdEstadoTurno() const;
+    EstadoTurno getEstadoTurno() const;
     bool getEstado() const;
 
     // Setters
@@ -36,7 +37,7 @@ public:
     void setMotivo(const char* m);
     void setObservacionPrevia(const char* obs);
     void setCostoConsulta(float costo);
-    void setIdEstadoTurno(int idEst);
+    void setEstadoTurno(EstadoTurno estado);
     void setEstado(bool est);
     //Metodos
     void cargar();

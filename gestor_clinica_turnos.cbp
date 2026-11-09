@@ -38,11 +38,11 @@
 		<Unit filename="agenda.h" />
 		<Unit filename="agendaArchivo.cpp" />
 		<Unit filename="agendaArchivo.h" />
+		<Unit filename="diaSemana.h" />
 		<Unit filename="especialidad.cpp" />
 		<Unit filename="especialidad.h" />
 		<Unit filename="especialidadArchivo.cpp" />
 		<Unit filename="especialidadArchivo.h" />
-		<Unit filename="estadoTurno.cpp" />
 		<Unit filename="estadoTurno.h" />
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />

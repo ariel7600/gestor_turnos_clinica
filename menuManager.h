@@ -3,14 +3,13 @@
 
 class MenuManager {
 public:
-    void ejecutarMenuPrincipal();
+    void MenuPrincipal();
 
 private:
     void menuMedicos();
     void menuPacientes();
     void menuHorarios();
     void menuTurnos();
-    void menuConsultas();
     void menuInformes();
 
 };
