@@ -35,6 +35,7 @@ public:
     void setDuracion(int dur);
     void setEstado(bool est);
 
+    const char* diaSemanaTexto(DiaSemana dia) const ;
     void cargar();
     void mostrar() const;
 };

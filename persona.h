@@ -2,6 +2,7 @@
 #define PERSONA_H_INCLUDED
 
 #include <cstring>
+#include <cctype>
 #include <iostream>
 #include "Fecha.h"
 using namespace std;
@@ -34,6 +35,9 @@ public:
     void setTelefono(const char* tel);
     void setMail(const char* m);
 
+    bool esTextoValido(const char* texto);
+    bool validarTelefono(const char* tel);
+    bool esMailValido(const string& mail);
     void cargar();
     void mostrar() const;
 };

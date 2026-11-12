@@ -16,12 +16,51 @@ void Fecha::setMes(int mes) { _mes = mes; }
 void Fecha::setAnio(int anio) { _anio = anio; }
 
 void Fecha::cargar() {
-    cout << "Dia: ";
-    cin >> _dia;
-    cout << "Mes: ";
-    cin >> _mes;
-    cout << "Anio: ";
-    cin >> _anio;
+    bool fechaValida = false;
+    int d, m, a;
+
+    do {
+        cout << "Anio: ";
+        if (!(cin >> a) || a < 1900) {
+            cout << "Error: Anio invalido.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+
+        //ValidaciOn del mes
+        cout << "Mes (1 - 12): ";
+        if (!(cin >> m) || m < 1 || m > 12) {
+            cout << "Error: Mes invalido.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+
+        int diasMaximos = 31;
+
+        if (m == 4 || m == 6 || m == 9 || m == 11) { //SOLO ALGUNOS MESES TIENEN 31 DIAS
+            diasMaximos = 30;
+        }
+        else if (m == 2) {
+            bool esBisiesto = (a % 4 == 0 && a % 100 != 0) || (a % 400 == 0);
+            diasMaximos = esBisiesto ? 29 : 28;
+        }
+
+        cout << "Dia (1 - " << diasMaximos << "): ";
+        if (!(cin >> d) || d < 1 || d > diasMaximos) {
+            cout << "Error: Dia invalido para el mes y anio ingresados.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+        _anio = a;
+        _mes = m;
+        _dia = d;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Limpiar búfer
+        fechaValida = true;
+
+    } while (!fechaValida);
 }
 
 void Fecha::mostrar() const {

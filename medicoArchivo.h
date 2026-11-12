@@ -14,6 +14,8 @@ public:
     Medico leer(int pos);
     int getCantidadRegistros();
     int buscarPorId(int idMedico);
+    bool existeMatricula(int matricula);
+    int getUltimoId();
 };
 
 #endif

@@ -1,4 +1,5 @@
 #include "HorarioAtencion.h"
+#include "diaSemana.h"
 
 HorarioAtencion::HorarioAtencion() {
     idHorario = 0;
@@ -22,7 +23,7 @@ void HorarioAtencion::setHorario(HoraMin h) { horario = h; }
 void HorarioAtencion::setDuracion(int dur) { duracion = dur; }
 void HorarioAtencion::setEstado(bool est) { estado = est; }
 
-const char* diaSemanaTexto(DiaSemana dia) {
+const char* HorarioAtencion::diaSemanaTexto(DiaSemana dia) const {
     switch (dia) {
         case DiaSemana::LUNES:
             return "Lunes";
@@ -44,8 +45,6 @@ const char* diaSemanaTexto(DiaSemana dia) {
 }
 
 void HorarioAtencion::cargar() {
-    cout << "ID Horario de Atencion: \n ";
-    cin >> idHorario;
     cout << "ID Medico: ";
     cin >> idMedico;
     cin.ignore();

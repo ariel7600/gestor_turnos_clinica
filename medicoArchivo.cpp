@@ -49,7 +49,7 @@ int MedicoArchivo::buscarPorId(int idMedico) {
 
     int pos = 0;
     while (fread(&reg, sizeof(Medico), 1, p)) {
-        if (reg.getIdMedico() == idMedico) {
+        if (reg.getIdMedico() == idMedico && reg.getEstado()) { //ignora dados de baja
             fclose(p);
             return pos;
         }
@@ -57,4 +57,33 @@ int MedicoArchivo::buscarPorId(int idMedico) {
     }
     fclose(p);
     return -1;
+}
+
+bool MedicoArchivo::existeMatricula(int mat) {
+    Medico reg;
+    FILE *p = fopen(nombreArchivo, "rb");
+    if (p == nullptr) return false;
+    while (fread(&reg, sizeof(Medico), 1, p)) {
+        if (reg.getMatricula() == mat) {
+            fclose(p);
+            return true;
+        }
+    }
+    fclose(p);
+    return false;
+}
+
+int MedicoArchivo::getUltimoId() {
+    Medico reg;
+    FILE *p = fopen(nombreArchivo, "rb");
+    if (p == nullptr) return 0; // Si no existe el archivo el 1er ID será 1 por defecto
+
+    int maxId = 0;
+    while (fread(&reg, sizeof(Medico), 1, p)) {
+        if (reg.getIdMedico() > maxId) {
+            maxId = reg.getIdMedico();
+        }
+    }
+    fclose(p);
+    return maxId;
 }

@@ -1,6 +1,6 @@
 #ifndef MENUMANAGER_H_INCLUDED
 #define MENUMANAGER_H_INCLUDED
-
+#include <limits>
 class MenuManager {
 public:
     void MenuPrincipal();

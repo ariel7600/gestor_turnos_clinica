@@ -1,7 +1,9 @@
 #ifndef MEDICO_H_INCLUDED
 #define MEDICO_H_INCLUDED
-
 #include "Persona.h"
+#include <limits>
+
+
 using namespace std;
 
 class Medico : public Persona {
@@ -23,7 +25,6 @@ public:
     void setMatricula(int mat);
     void setIdEspecialidad(int idEsp);
     void setEstado(bool est);
-
     void cargar();
     void mostrar() const;
 };
