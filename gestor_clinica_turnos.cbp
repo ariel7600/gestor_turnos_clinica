@@ -33,6 +33,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename=".gitignore" />
+		<Unit filename="EspecialidadArchivo.h" />
 		<Unit filename="README.md" />
 		<Unit filename="agenda.cpp" />
 		<Unit filename="agenda.h" />
