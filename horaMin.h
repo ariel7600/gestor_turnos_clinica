@@ -29,6 +29,9 @@ public:
     void cargar();
     void mostrar() const;
     string toString() const;
+
+    bool operator<(const HoraMin& otro) const;
+    HoraMin sumarMinutos(int minutosASumar) const;
 };
 
 #endif

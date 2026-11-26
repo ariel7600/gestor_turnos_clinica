@@ -1,4 +1,5 @@
 #include "Agenda.h"
+#include "agendaArchivo.h"
 
 Agenda::Agenda() {
     idAgenda = 0;
@@ -25,8 +26,9 @@ void Agenda::setDisponibilidad(bool disp) { disponibilidad = disp; }
 void Agenda::setEstado(bool est) { estado = est; }
 
 void Agenda::cargar() {
-    cout << "ID Agenda: ";
-    cin >> idAgenda;
+    AgendaArchivo agArch("datos/agendas.dat");
+    int ultimoId = agArch.getUltimoIdAg();
+    idAgenda = ultimoId + 1;
     cout << "ID Medico: ";
     cin >> idMedico;
     cout << "Fecha del turno en agenda:\n";

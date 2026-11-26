@@ -18,7 +18,7 @@ void Especialidad::setNombreEspecialidad(const char* nom) { strcpy(nombreEspecia
 void Especialidad::setDescripcion(const char* desc) { strcpy(descripcion, desc); }
 void Especialidad::setEstado(bool est) { estado = est; }
 
-string normalizarTexto(string texto) {  //normaliza textos
+string normalizarTexto(string texto) {
     string resultado = texto;
     for (char &c : resultado) {
         c = tolower(static_cast<unsigned char>(c));
@@ -27,7 +27,7 @@ string normalizarTexto(string texto) {  //normaliza textos
 }
 
 void Especialidad::cargar() {
-    EspecialidadArchivo archivo("especialidad.dat");
+    EspecialidadArchivo archivo("datos/especialidad.dat");
     int maxID = archivo.getUltimoIdesp();
     int nuevoIdEspecialidad = maxID + 1;
     setIdEspecialidad(nuevoIdEspecialidad);
@@ -50,7 +50,7 @@ void Especialidad::cargar() {
     } while (nombreDuplicado);
     cout << "Descripcion: ";
     cin.getline(descripcion, 100);
-    setNombreEspecialidad(nombreEspecialidad); //se guarda en especialidad.dat
+    setNombreEspecialidad(nombreEspecialidad);
     setDescripcion(descripcion);
     setEstado(true);
 

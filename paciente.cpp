@@ -1,4 +1,5 @@
 #include "Paciente.h"
+#include "pacienteArchivo.h"
 
 Paciente::Paciente() : Persona() {
     idPaciente = 0;
@@ -18,19 +19,45 @@ void Paciente::setNumAfiliado(int num) { numAfiliado = num; }
 void Paciente::setEstado(bool est) { estado = est; }
 
 void Paciente::cargar() {
-    std::cout << "ID Paciente: "; std::cin >> idPaciente;
-    std::cin.ignore();
-    Persona::cargar(); // Reutiliza la carga de datos personales
-    std::cout << "Obra Social: "; std::cin.getline(obraSocial, 20);
-    std::cout << "Numero de Afiliado: "; std::cin >> numAfiliado;
+    PacienteArchivo arch("datos/pacientes.dat");
+    int ultimoId = arch.getUltimoId();
+    idPaciente = ultimoId + 1;
+    cout << "ID Paciente asignado automaticamente: " << idPaciente << endl; //id autoincremental
+    Persona::cargar();
+    do {
+        cout << "Obra Social (Escribe el nombre sin puntos ni otros signos, ej: OSDE): ";
+        cin.getline(obraSocial, 20);
+
+        if (obraSocial[0] == '\0') {
+            cout << "Error: La obra social no puede estar vacia. Reintente.\n";
+        } else {
+            //normalizo todo en mayusculas
+            for (int i = 0; obraSocial[i] != '\0'; i++) {
+                obraSocial[i] = toupper(obraSocial[i]);
+            }
+            break;
+        }
+    } while (true);
+    do {
+        cout << "Numero de Afiliado (Ingresa solo numeros, sin guiones ni barras): ";
+        if (!(cin >> numAfiliado) || numAfiliado <= 0) {
+            cout << "Error: Formato invalido.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            break;
+        }
+    } while (true);
     estado = true;
+    cout << "--> Paciente cargado con exito!\n";
 }
 
 void Paciente::mostrar() const {
     if (estado) {
         std::cout << "ID Paciente: " << idPaciente << "\n";
         Persona::mostrar();
-        std::cout << "Obra Social: " << obraSocial << " (Nº Afiliado: " << numAfiliado << ")\n"
+        std::cout << "Obra Social: " << obraSocial << " (Num Afiliado: " << numAfiliado << ")\n"
                   << "--------------------------------------------------\n";
     }
 }

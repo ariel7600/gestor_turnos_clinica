@@ -1,5 +1,6 @@
 #include "Fecha.h"
 #include <sstream>
+#include <ctime>
 
 using namespace std;
 
@@ -67,6 +68,33 @@ void Fecha::mostrar() const {
     cout << toString();
 }
 
+bool Fecha::esDia(int diaSemanaObjetivo) const {
+    struct tm g_time = {0};
+    g_time.tm_year = _anio - 1900;
+    g_time.tm_mon = _mes - 1;
+    g_time.tm_mday = _dia;
+
+
+    mktime(&g_time);
+
+    int diaSemanaActual = (g_time.tm_wday == 0) ? 7 : g_time.tm_wday;
+
+    return diaSemanaActual == diaSemanaObjetivo;
+}
+
+void Fecha::siguiente() {
+    struct tm g_time = {0};
+    g_time.tm_year = _anio - 1900;
+    g_time.tm_mon = _mes - 1;
+    g_time.tm_mday = _dia + 1;
+
+    mktime(&g_time);
+
+    _dia = g_time.tm_mday;
+    _mes = g_time.tm_mon + 1;
+    _anio = g_time.tm_year + 1900;
+}
+
 string Fecha::toString() const {
     stringstream ss;
     ss << (_dia < 10 ? "0" : "") << _dia << "/"
@@ -88,3 +116,5 @@ bool Fecha::operator<(const Fecha& otra) const {
 bool Fecha::operator<=(const Fecha& otra) const {
     return (*this < otra) || (*this == otra);
 }
+
+

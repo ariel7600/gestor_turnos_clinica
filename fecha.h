@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include <vector>
 
 class Fecha {
 private:
@@ -27,7 +28,10 @@ public:
 
     void cargar();
     void mostrar() const;
+    bool esDia(int diasSemanaObjetivo) const;
+    void siguiente();
     std::string toString() const;
+
 
     // Operadores de comparación para comparar fechas
     bool operator==(const Fecha& otra) const;

@@ -80,6 +80,7 @@ bool Persona::esMailValido(const string& mail) {
 
 void Persona::cargar() {
     do {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Nombre: ";
         cin.getline(nombre, 50);
         if (!esTextoValido(nombre)) {
@@ -102,15 +103,15 @@ void Persona::cargar() {
         if (!(cin >> dni) || dni < 1000000 || dni > 99999999) {
             cout << "Error: DNI invalido.\n";
             cin.clear();
-            cin.ignore();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         } else {
-            cin.ignore();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             break;
         }
     } while (true);
     do{
-        cout << "Fecha de Nacimiento:\n"; fechaNacimiento.cargar();
-        cin.ignore();
+        cout << "Fecha de Nacimiento:\n";
+        fechaNacimiento.cargar();
         int anio=fechaNacimiento.getAnio();
         if(anio>2026){
             cout<<"Error: año ingresado invalido. \n";

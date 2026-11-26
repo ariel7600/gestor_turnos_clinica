@@ -26,13 +26,6 @@ void HistorialMedico::setAnotacionMedica(const char* anot) { strcpy(anotacionMed
 void HistorialMedico::setEstado(bool est) { estado = est; }
 
 void HistorialMedico::cargar() {
-    cout << "ID Historial: ";
-    cin >> idHistorial;
-    cout << "ID Paciente: ";
-    cin >> idPaciente;
-    cout << "Fecha del registro clinico:\n";
-    fechaHistorial.cargar();
-    cin.ignore();
     cout << "Diagnostico: ";
     cin.getline(diagnostico, 150);
     cout << "Tratamiento: ";

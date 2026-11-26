@@ -75,3 +75,18 @@ int TurnoArchivo::buscarPorAgenda(int idAgenda) {
     fclose(p);
     return -1;
 }
+
+int TurnoArchivo::getUltimoId() {
+    Turno reg;
+    FILE *p = fopen(nombreArchivo, "rb");
+    if (p == nullptr) return 0;
+
+    int maxId = 0;
+    while (fread(&reg, sizeof(Turno), 1, p)) {
+        if (reg.getIdPaciente() > maxId) {
+            maxId = reg.getIdTurno();
+        }
+    }
+    fclose(p);
+    return maxId;
+}

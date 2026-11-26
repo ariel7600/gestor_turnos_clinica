@@ -65,6 +65,11 @@
 		<Unit filename="medicoArchivo.h" />
 		<Unit filename="menuManager.cpp" />
 		<Unit filename="menuManager.h" />
+		<Unit filename="menuManager_horarios.cpp" />
+		<Unit filename="menuManager_informes.cpp" />
+		<Unit filename="menuManager_medicos.cpp" />
+		<Unit filename="menuManager_pacientes.cpp" />
+		<Unit filename="menuManager_turnos.cpp" />
 		<Unit filename="paciente.cpp" />
 		<Unit filename="paciente.h" />
 		<Unit filename="pacienteArchivo.cpp" />

@@ -1,5 +1,7 @@
 #include "HorarioAtencion.h"
 #include "diaSemana.h"
+#include "medicoArchivo.h"
+#include "horarioAtencionArchivo.h"
 
 HorarioAtencion::HorarioAtencion() {
     idHorario = 0;
@@ -45,8 +47,30 @@ const char* HorarioAtencion::diaSemanaTexto(DiaSemana dia) const {
 }
 
 void HorarioAtencion::cargar() {
-    cout << "ID Medico: ";
-    cin >> idMedico;
+    MedicoArchivo medArch("datos/medico.dat");
+    HorarioAtencionArchivo horarioArch("datos/horarios.dat");
+    do {
+        cout << "ID Medico: ";
+        if (!(cin >> idMedico)) {
+            cout << "Entrada invalida. Ingrese un numero.\n";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            continue;
+        }
+
+        int posMed = medArch.buscarPorId(idMedico);
+        if (posMed >= 0) {
+            Medico m = medArch.leer(posMed);
+            if (m.getEstado()) {
+                break;
+            } else {
+                cout << "Error: El medico ingresado se encuentra dado de baja.\n";
+            }
+        } else {
+            cout << "Error: No existe un medico registrado con ese ID.\n";
+        }
+    } while (true);
+
     cin.ignore();
     int opcion;
     do {
@@ -61,10 +85,43 @@ void HorarioAtencion::cargar() {
 
     } while (opcion < 1 || opcion > 7);
     dia = static_cast<DiaSemana>(opcion);
-    cout << "Rango horario de atencion:\n";
-    horario.cargar();
-    cout << "Duracion estimada de cada turno (minutos): ";
-    cin >> duracion;
+    bool solapamientoDetectado = false;
+    do {
+        solapamientoDetectado = false;
+        cout << "Rango horario de atencion:\n";
+        horario.cargar();
+
+        int cantHorarios = horarioArch.getCantidadRegistros();
+        for (int i = 0; i < cantHorarios; i++) {
+            HorarioAtencion hExistente = horarioArch.leer(i);
+
+            if (hExistente.getIdMedico() == idMedico && hExistente.getDia() == dia && hExistente.getEstado()) {
+
+                bool seSolapa = !(horario.getHoraFin() <= hExistente.getHorario().getHoraInicio()) &&
+                                 !(hExistente.getHorario().getHoraFin() <= horario.getHoraInicio());
+
+                if (seSolapa) {
+                    cout << "\nError: El rango horario ingresado se solapa con otro horario ya asignado a este medico el mismo dia:\n";
+                    cout << "Conflicto con franja existente: " << hExistente.getHorario().getHoraInicio() << " a " << hExistente.getHorario().getHoraFin() << "\n";
+                    cout << "Por favor, ingrese un rango horario diferente.\n";
+                    solapamientoDetectado = true;
+                    break;
+                }
+            }
+        }
+
+    } while (solapamientoDetectado);
+    do {
+        cout << "Duracion estimada de cada turno (minutos): ";
+        if (!(cin >> duracion) || duracion <= 0) {
+            cout << "La duracion debe ser un valor mayor a cero.\n";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            duracion = 0;
+            continue;
+        }
+        break;
+    } while (true);
     estado = true;
 }
 

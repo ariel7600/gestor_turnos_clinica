@@ -16,6 +16,7 @@ public:
     int getCantidadRegistros();
     int buscarPorId(int idPaciente);
     int buscarPorDni(int dni);
+    int getUltimoId();
 };
 
 #endif

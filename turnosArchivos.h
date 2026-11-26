@@ -16,6 +16,7 @@ public:
     int getCantidadRegistros();
     int buscarPorId(int idTurno);
     int buscarPorAgenda(int idAgenda);
+    int getUltimoId();
 };
 
 #endif

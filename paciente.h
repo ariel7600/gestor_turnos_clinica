@@ -2,6 +2,8 @@
 #define PACIENTE_H_INCLUDED
 
 #include "Persona.h"
+#include <limits>
+using namespace std;
 
 class Paciente : public Persona {
 private:

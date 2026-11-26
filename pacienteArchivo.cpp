@@ -75,3 +75,18 @@ int PacienteArchivo::buscarPorDni(int dni) {
     fclose(p);
     return -1;
 }
+
+int PacienteArchivo::getUltimoId() {
+    Paciente reg;
+    FILE *p = fopen(nombreArchivo, "rb");
+    if (p == nullptr) return 0;
+
+    int maxId = 0;
+    while (fread(&reg, sizeof(Paciente), 1, p)) {
+        if (reg.getIdPaciente() > maxId) {
+            maxId = reg.getIdPaciente();
+        }
+    }
+    fclose(p);
+    return maxId;
+}

@@ -62,7 +62,7 @@ int EspecialidadArchivo::buscarPorId(int idEspecialidad) {
 int EspecialidadArchivo::getUltimoIdesp() {
     Especialidad reg;
     FILE *p = fopen(nombreArchivo, "rb");
-    if (p == nullptr) return 0; // Si no existe el archivo el 1er ID será 1 por defecto
+    if (p == nullptr) return 0;
 
     int maxId = 0;
     while (fread(&reg, sizeof(Especialidad), 1, p)) {

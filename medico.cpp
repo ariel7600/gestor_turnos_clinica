@@ -21,7 +21,7 @@ void Medico::setIdEspecialidad(int idEsp) { idEspecialidad = idEsp; }
 void Medico::setEstado(bool est) { estado = est; }
 
 void Medico::cargar() {
-    MedicoArchivo arch("medico.dat");
+    MedicoArchivo arch("datos/medico.dat");
     int ultimoId = arch.getUltimoId();
     idMedico = ultimoId + 1;
     cout << "ID Medico asignado automaticamente: " << idMedico << endl; //id autoincremental
@@ -41,7 +41,7 @@ void Medico::cargar() {
             break;
         }
     } while (true);
-    EspecialidadArchivo espArch("especialidad.dat");
+    EspecialidadArchivo espArch("datos/especialidad.dat");
     int cantEsp = espArch.getCantidadRegistros();
 
     cout << "\n--------------------------------------------------" << endl;
