@@ -18,7 +18,14 @@ void MenuManager::MenuPrincipal() {
         cout << "----------------------------------------\n";
 
         cout<< "Ingrese un valor (0-5): ";
-        cin>>opcion;
+        if (!(cin >> opcion)) {
+            cout << "\nError: Entrada invalida. Por favor, ingrese un numero entero.\n";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            system("pause");
+            opcion = -1;
+            continue;
+        }
 
         switch (opcion) {
             case 1:

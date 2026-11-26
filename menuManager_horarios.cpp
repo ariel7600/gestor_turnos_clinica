@@ -6,7 +6,7 @@
 using namespace std;
 
 void MenuManager::menuHorarios() {
-     int opcion;
+     int opcion=-1;
      HorarioAtencionArchivo archivo("datos/horarios.dat");
      AgendaArchivo arch("datos/agendas.dat");
      do {
@@ -21,8 +21,14 @@ void MenuManager::menuHorarios() {
                   << "5 - Consultas de Agenda.\n"
                   << "0 - Volver al Menu Principal\n";
         cout<<"Ingrese una opcion (0-5): ";
-        cin>>opcion;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        if (!(cin >> opcion)) {
+            cout << "\nError: Entrada invalida. Por favor, ingrese un numero entero.\n";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            system("pause");
+            opcion = -1;
+            continue;
+        }
 
         switch (opcion) {
             case 1:{
@@ -83,7 +89,14 @@ void MenuManager::menuHorarios() {
                             cout << "1-Lunes, 2- Martes, 3- Miercoles, 4- Jueves \n";
                             cout << "5-Viernes, 6-Sabado, 7-Domingo. \n";
                             cout << "Opcion: ";
-                            cin >> opcion;
+                            if (!(cin >> opcion)) {
+                                cout << "\nError: Entrada invalida. Por favor, ingrese un numero entero.\n";
+                                cin.clear();
+                                cin.ignore(10000, '\n');
+                                system("pause");
+                                opcion = -1;
+                                continue;
+                            }
                             if (opcion < 1 || opcion > 7) {
                                 cout << "Opcion invalida.\n";
                             }

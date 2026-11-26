@@ -26,7 +26,14 @@ void MenuManager::menuMedicos() {
         cout << "----------------------------------------\n";
 
         cout<<"Ingrese una opcion (0-5): ";
-        cin>>opcion;
+        if (!(cin >> opcion)) {
+            cout << "\nError: Entrada invalida. Por favor, ingrese un numero entero.\n";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            system("pause");
+            opcion = -1;
+            continue;
+        }
 
         switch (opcion) {
             case 1:{
@@ -310,7 +317,14 @@ void MenuManager::menuMedicos() {
                     cout << "0. Volver al Submenu Medicos" << endl;
                     cout << "----------------------------" << endl;
                     cout << "Ingrese una opcion: ";
-                    cin >> subOpcion;
+                    if (!(cin >> subOpcion)) {
+                        cout << "\nError: Entrada invalida. Por favor, ingrese un numero entero.\n";
+                        cin.clear();
+                        cin.ignore(10000, '\n');
+                        system("pause");
+                        subOpcion = -1;
+                        continue;
+                    }
 
                     int cant = archivo.getCantidadRegistros();
                     if (cant <= 0 && subOpcion != 0) {
